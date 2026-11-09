@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Michigan minutes deadline: 8 business days | Mind the Minutes</title>
+  <meta name="description" content="Count business days for Michigan meeting minutes with this free deadline calculator.">
+  <link rel="canonical" href="https://mindtheminutes.com/michigan-minutes-deadline/">
+  <meta property="og:title" content="Michigan minutes deadline: 8 business days | Mind the Minutes">
+  <meta property="og:description" content="Count business days for Michigan meeting minutes with this free deadline calculator.">
+  <meta property="og:image" content="https://mindtheminutes.com/og.png">
+  <meta property="og:url" content="https://mindtheminutes.com/michigan-minutes-deadline/">
+  <meta property="og:type" content="website">
+
+  <meta name="theme-color" content="#174c93">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+  <script defer data-domain="mindtheminutes.com" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="app-bar">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Mind the Minutes home"><svg class="app-mark" viewBox="0 0 1024 1024" width="32" height="32" aria-hidden="true" focusable="false">
+      <rect x="64" y="64" width="896" height="896" rx="180" fill="#1f5f8b"/>
+      <g fill="#ffffff">
+        <rect x="256" y="320" width="512" height="48"/>
+        <rect x="256" y="488" width="512" height="48"/>
+        <rect x="256" y="656" width="512" height="48"/>
+      </g>
+    </svg><span>Mind the Minutes</span></a>
+      <nav aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/download/">Download</a>
+        <a href="/michigan-minutes-deadline/" aria-current="page">Michigan deadline</a>
+        <a href="/michigan-minutes-template/">Template</a>
+        <a href="/how-to-write-meeting-minutes/">How to write minutes</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <h1>Michigan meeting-minutes deadline</h1>
+    <p>Enter the meeting date to find when proposed minutes are due.</p>
+    <form id="calculator" aria-describedby="coverage">
+      <noscript><p class="warning">Turn on JavaScript to use this calculator.</p></noscript>
+      <div class="date-fields">
+        <div>
+          <label for="meeting">Meeting date</label>
+          <input id="meeting" name="meeting" type="date" min="2026-01-01" max="2027-12-31" required>
+        </div>
+        <div>
+          <label for="approval">Approval date <span>· Optional</span></label>
+          <input id="approval" name="approval" type="date" min="2026-01-01" max="2027-12-31" aria-describedby="approval-help">
+          <p class="hint" id="approval-help">Add the approval date to find when approved minutes are due. Use the date of the meeting that approved the minutes. It must be on or after the meeting date.</p>
+        </div>
+      </div>
+      <button type="submit">Calculate deadlines</button>
+      <p id="error" role="alert"></p>
+    </form>
+    <section class="results" id="results" aria-labelledby="results-title" aria-live="polite" aria-atomic="true" hidden>
+      <h2 id="results-title">Your safe deadlines</h2>
+      <p>Use these dates to avoid counting a holiday that your office was open.</p>
+      <dl>
+        <dt>Proposed minutes safe date</dt><dd><strong class="safe-date" id="proposed-due"></strong></dd>
+        <dt>Approved minutes safe date</dt><dd><strong class="safe-date" id="approved-due"></strong></dd>
+      </dl>
+      <h3>If your office was closed</h3>
+      <p>The dates below are conditional. Confirm which days your office was closed before using a later date.</p>
+      <h4>Proposed minutes closure window</h4>
+      <p id="proposed-closure-note"></p>
+      <ul id="proposed-closures"></ul>
+      <h4>Approved minutes closure window</h4>
+      <p id="approved-closure-note"></p>
+      <ul id="approved-closures"></ul>
+    </section>
+    <p class="warning" id="statute">Proposed minutes must be available within 8 business days after the meeting. Approved minutes must be available within 5 business days after the meeting at which they are approved. Michigan&#x27;s law doesn&#x27;t define &#x27;business day&#x27;. The safe dates count every Monday to Friday, skipping no holidays. Checked against MCL 15.269(3) on legislature.mi.gov, 8 November 2026. <a href="https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-15-269">Read the statute</a>.</p>
+    <p id="coverage">This tool covers 2026 and 2027 only. Each safe date must fit those years. Counting starts the next day and counts every Monday to Friday. No holidays are skipped in the safe date.</p>
+    <p>This tool is not legal advice. Use the safe date. If you're unsure which date applies to your board, check with your attorney.</p>
+    <details>
+      <summary>State office closure reference and limits</summary>
+      <p id="source-note"></p>
+      <ul id="holiday-list"></ul>
+    </details>
+    <div class="download-step">
+      <div class="download-row">
+        <a class="button plausible-event-name=Download+free" href="/download/?src=michigan-minutes-deadline">Download free</a>
+        <p class="price">Your first meeting is free. $79 once per computer after that.</p>
+      </div>
+      <p class="download-details">No card for the free meeting · 30-day refund · Mac with Apple silicon, macOS 12 or later · Windows 10 or 11, 64-bit</p>
+      <p class="mobile-link"><a href="mailto:?subject=Mind%20the%20Minutes%20download&amp;body=https%3A%2F%2Fmindtheminutes.com%2Fdownload%2F">Send the Mac link to yourself</a></p>
+    </div>
+
+    <p><a href="/michigan-minutes-template/">Get the free Michigan meeting minutes template in Word and PDF</a>.</p>
+
+
+
+
+    <p class="checked">Checked 9 November 2026</p>
+  </main>
+  <footer>
+    <p>Made by Kerr &amp; Company LLC, Grand Rapids, Michigan.</p>
+    <nav aria-label="Footer"><a href="/privacy/">Privacy</a> <a href="/terms/">Terms</a></nav>
+  </footer>
+<script id="holiday-data" type="application/json">{
+  "state": "MI",
+  "years": [
+    2026,
+    2027
+  ],
+  "source_note": "This state office closure list is a reference, not the law. It may not match your office. Dates were entered offline using calendar rules, not checked against a downloaded state schedule. Only use a later date after confirming your office's closures.",
+  "holidays": {
+    "2026-01-01": "New Year's Day",
+    "2026-01-19": "Martin Luther King Jr. Day",
+    "2026-02-16": "Presidents Day",
+    "2026-05-25": "Memorial Day",
+    "2026-06-19": "Juneteenth",
+    "2026-07-03": "Independence Day observed",
+    "2026-09-07": "Labor Day",
+    "2026-11-03": "Election Day",
+    "2026-11-11": "Veterans Day",
+    "2026-11-26": "Thanksgiving Day",
+    "2026-11-27": "Day after Thanksgiving",
+    "2026-12-24": "Christmas Eve",
+    "2026-12-25": "Christmas Day",
+    "2026-12-31": "New Year's Eve",
+    "2027-01-01": "New Year's Day",
+    "2027-01-18": "Martin Luther King Jr. Day",
+    "2027-02-15": "Presidents Day",
+    "2027-05-31": "Memorial Day",
+    "2027-06-18": "Juneteenth observed",
+    "2027-07-05": "Independence Day observed",
+    "2027-09-06": "Labor Day",
+    "2027-11-11": "Veterans Day",
+    "2027-11-25": "Thanksgiving Day",
+    "2027-11-26": "Day after Thanksgiving",
+    "2027-12-23": "Christmas Eve observed",
+    "2027-12-24": "Christmas Day observed",
+    "2027-12-30": "New Year's Eve observed",
+    "2027-12-31": "New Year's Day 2028 observed"
+  }
+}</script>
+<script id="deadline-logic">
+    "use strict";
+    const CALENDAR = JSON.parse(document.getElementById("holiday-data").textContent);
+    const HOLIDAYS = new Set(Object.keys(CALENDAR.holidays));
+
+    function parseDate(value) {
+      if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+        throw new Error("Use a valid date in YYYY-MM-DD form.");
+      }
+      const day = new Date(value + "T00:00:00Z");
+      if (!Number.isFinite(day.getTime()) || day.toISOString().slice(0, 10) !== value) {
+        throw new Error("Use a valid date in YYYY-MM-DD form.");
+      }
+      return day;
+    }
+
+    function checkYear(day) {
+      if (!CALENDAR.years.includes(day.getUTCFullYear())) {
+        throw new Error("This tool covers only 2026 and 2027. The safe counting period must fit those years.");
+      }
+    }
+
+    function addBusinessDays(day, count) {
+      day = new Date(day.getTime());
+      checkYear(day);
+      if (!Number.isInteger(count) || count < 0) {
+        throw new Error("Business day count must be a whole number of zero or more.");
+      }
+      while (count > 0) {
+        day.setUTCDate(day.getUTCDate() + 1);
+        checkYear(day);
+        const weekday = day.getUTCDay();
+        if (weekday !== 0 && weekday !== 6) {
+          count -= 1;
+        }
+      }
+      return day;
+    }
+
+    function officeClosureScenario(day, count) {
+      day = new Date(day.getTime());
+      const closures = [];
+      while (count > 0) {
+        day.setUTCDate(day.getUTCDate() + 1);
+        if (!CALENDAR.years.includes(day.getUTCFullYear())) {
+          return {due: null, closures, beyond_coverage: true};
+        }
+        const weekday = day.getUTCDay();
+        if (weekday !== 0 && weekday !== 6) {
+          const value = day.toISOString().slice(0, 10);
+          if (HOLIDAYS.has(value)) {
+            closures.push({date: value, name: CALENDAR.holidays[value]});
+          } else {
+            count -= 1;
+          }
+        }
+      }
+      return {due: day.toISOString().slice(0, 10), closures, beyond_coverage: false};
+    }
+
+    function calculateDeadlines(meetingDate, approvedDate = null, state = "MI") {
+      if (state !== "MI") throw new Error("Only MI is supported.");
+      const meeting = parseDate(meetingDate);
+      const approved = approvedDate === null ? null : parseDate(approvedDate);
+      if (approved !== null && approved < meeting) {
+        throw new Error("Approval date must be on or after the meeting date.");
+      }
+      return {
+        state, meeting_date: meetingDate, approved_date: approvedDate,
+        proposed_due: addBusinessDays(meeting, 8).toISOString().slice(0, 10),
+        approved_due: approved === null ? null : addBusinessDays(approved, 5).toISOString().slice(0, 10),
+        proposed_if_closed: officeClosureScenario(meeting, 8),
+        approved_if_closed: approved === null ? null : officeClosureScenario(approved, 5),
+        source_note: CALENDAR.source_note
+      };
+    }
+  </script>
+<script id="deadline-ui">
+    const form = document.getElementById("calculator");
+    const results = document.getElementById("results");
+    const error = document.getElementById("error");
+    function clearResults() {
+      results.hidden = true;
+      error.textContent = "";
+    }
+    form.addEventListener("input", clearResults);
+    form.addEventListener("invalid", clearResults, true);
+    function formatDate(value) {
+      return parseDate(value).toLocaleDateString("en-US", {
+        timeZone: "UTC", weekday: "long", year: "numeric", month: "long", day: "numeric"
+      });
+    }
+    function showClosures(prefix, scenario) {
+      const note = document.getElementById(prefix + "-closure-note");
+      const list = document.getElementById(prefix + "-closures");
+      list.replaceChildren();
+      if (scenario === null) {
+        note.textContent = "Add an approval date to see this closure window.";
+        return;
+      }
+      if (scenario.beyond_coverage) {
+        note.textContent = "The closure scenario runs past 2027. Use the safe date until you confirm your office's deadline.";
+      } else if (scenario.closures.length === 0) {
+        note.textContent = "No listed state office closures fall in this window.";
+      } else {
+        note.textContent = "If your office was closed on any of these days in the window, you may have until "
+          + formatDate(scenario.due) + ". This later date assumes your office was closed on every listed day. "
+          + "If it was open on any listed day, its deadline may be earlier. Other office closures are not included.";
+      }
+      for (const closure of scenario.closures) {
+        const item = document.createElement("li");
+        item.textContent = formatDate(closure.date) + ": " + closure.name;
+        list.appendChild(item);
+      }
+    }
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      clearResults();
+      try {
+        const result = calculateDeadlines(
+          document.getElementById("meeting").value,
+          document.getElementById("approval").value || null
+        );
+        document.getElementById("proposed-due").textContent = formatDate(result.proposed_due);
+        document.getElementById("approved-due").textContent = result.approved_due
+          ? formatDate(result.approved_due) : "Add an approval date to calculate this deadline.";
+        showClosures("proposed", result.proposed_if_closed);
+        showClosures("approved", result.approved_if_closed);
+        results.hidden = false;
+      } catch (problem) {
+        error.textContent = problem.message;
+      }
+    });
+    document.getElementById("source-note").textContent = CALENDAR.source_note;
+    for (const [day, name] of Object.entries(CALENDAR.holidays)) {
+      const item = document.createElement("li");
+      item.textContent = formatDate(day) + ": " + name;
+      document.getElementById("holiday-list").appendChild(item);
+    }
+  </script>
+</body>
+</html>
