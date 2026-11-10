@@ -13,11 +13,14 @@
   <meta property="og:type" content="website">
 
   <meta name="theme-color" content="#174c93">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/dmsans-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/clashdisplay-600.woff2" crossorigin>
   <link rel="stylesheet" href="/style.css">
+  <script defer src="/site.js"></script>
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
-  <script defer data-domain="mindtheminutes.com" src="https://plausible.io/js/script.js"></script>
+  <script defer data-domain="mindtheminutes.com" src="https://plausible.io/js/script.tagged-events.js"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -40,10 +43,10 @@
       </nav>
     </div>
   </header>
-  <main id="main" tabindex="-1">
-    <h1>Meeting minutes example: a township board draft, section by section</h1>
+  <main id="main" class="page-content" tabindex="-1">
+    <div class="page-hero"><h1>Meeting minutes example: a township board draft, section by section</h1>
     <p class="byline">By Matt Kerr, who makes Mind the Minutes in Grand Rapids · Checked 9 November 2026</p>
-    <p>This is a complete example of board meeting minutes. It covers an 8-minute township board meeting with 5 members, 3 motions and one roll-call vote. Each part of the minutes is shown below, followed by what it records and why it is there.</p>
+    <p class="lede">This is a complete example of board meeting minutes. It covers an 8-minute township board meeting with 5 members, 3 motions and one roll-call vote. Each part of the minutes is shown below, followed by what it records and why it is there.</p></div>
     <p class="warning">This is a made-up meeting. The board, the people and the votes are invented. The draft came from running Mind the Minutes's transcript tool on its own test meeting on 9 November 2026. It is shown exactly as the tool wrote it, before a clerk checked it.</p>
     <p>Good minutes answer four questions: when and where the board met, who was there, what it decided, and how each member voted on any roll call. For Michigan public bodies, the Open Meetings Act lists these in <a href="https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-15-269">MCL 15.269(1)</a>. HOA, church and nonprofit boards are not public bodies under that Act, so check your bylaws for what your minutes must show.</p>
 
@@ -195,6 +198,12 @@
       <p>Written by Matthew Kerr in Grand Rapids, Michigan. Checked against MCL 15.267 and 15.269 on legislature.mi.gov, 9 November 2026. The draft was made the same day from a made-up test meeting.</p>
       <p>It is not legal advice. Your board's own rules and your attorney come first.</p>
     </section>
+<section class="faq-section"><div class="faq"><p class="kicker">Questions, answered</p><h2>Questions about this page</h2>
+<details><summary>Is this a real board meeting?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>This is a made-up meeting. The board, the people and the votes are invented.</p></details>
+<details><summary>What does the example cover?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>It covers an 8-minute township board meeting with 5 members, 3 motions and one roll-call vote.</p></details>
+<details><summary>Is a draft with no check marks final?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>No rule checks were raised. The clerk must still review the full draft.</p></details>
+<details><summary>Was a closed session held?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>No closed session was held.</p></details></div>
+</section>
 
     <p class="checked">Checked 9 November 2026</p>
   </main>
@@ -202,6 +211,43 @@
     <p>Made by Kerr &amp; Company LLC, Grand Rapids, Michigan.</p>
     <nav aria-label="Footer"><a href="/privacy/">Privacy</a> <a href="/terms/">Terms</a></nav>
   </footer>
-
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this a real board meeting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This is a made-up meeting. The board, the people and the votes are invented."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the example cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It covers an 8-minute township board meeting with 5 members, 3 motions and one roll-call vote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a draft with no check marks final?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No rule checks were raised. The clerk must still review the full draft."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was a closed session held?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No closed session was held."
+      }
+    }
+  ]
+}</script>
 </body>
 </html>

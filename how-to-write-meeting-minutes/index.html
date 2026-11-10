@@ -13,11 +13,14 @@
   <meta property="og:type" content="website">
 
   <meta name="theme-color" content="#174c93">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/dmsans-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/clashdisplay-600.woff2" crossorigin>
   <link rel="stylesheet" href="/style.css">
+  <script defer src="/site.js"></script>
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
-  <script defer data-domain="mindtheminutes.com" src="https://plausible.io/js/script.js"></script>
+  <script defer data-domain="mindtheminutes.com" src="https://plausible.io/js/script.tagged-events.js"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -40,10 +43,10 @@
       </nav>
     </div>
   </header>
-  <main id="main" tabindex="-1">
-    <h1>How to write meeting minutes</h1>
+  <main id="main" class="page-content" tabindex="-1">
+    <div class="page-hero"><h1>How to write meeting minutes</h1>
     <p class="byline">By Matt Kerr, who makes Mind the Minutes in Grand Rapids · Checked 9 November 2026</p>
-    <p>Minutes record what a group decided, not everything it said. Write down the date, time and place, who attended, each motion with who made and seconded it, how each vote went, and when the meeting ended. Then check the draft against your notes or the recording, and give it to the group to approve.</p>
+    <p class="lede">Minutes record what a group decided, not everything it said. Write down the date, time and place, who attended, each motion with who made and seconded it, how each vote went, and when the meeting ended. Then check the draft against your notes or the recording, and give it to the group to approve.</p></div>
     <p>That works for any meeting. Boards have more to get right, because their minutes are the official record. This guide is for small boards: townships, villages, library and school boards, HOAs, churches and nonprofits. Where Michigan's Open Meetings Act sets a rule for public bodies, the section is cited.</p>
 
     <section aria-labelledby="before-title">
@@ -118,6 +121,12 @@ Voice vote: passed.
       <p>Written by Matthew Kerr in Grand Rapids, Michigan. Checked against MCL 15.262, 15.267, 15.268 and 15.269 on legislature.mi.gov, 9 November 2026. The worked example was made the same day from a made-up test meeting.</p>
       <p>It is not legal advice. Your board's own rules and your attorney come first.</p>
     </section>
+<section class="faq-section"><div class="faq"><p class="kicker">Questions, answered</p><h2>Questions about this page</h2>
+<details><summary>What should I prepare before the meeting?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Build the draft from the agenda. Each agenda item becomes a heading.</p></details>
+<details><summary>What does each motion need?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Each motion needs five things: what was moved, who moved it, who seconded it, how the board voted and the result.</p></details>
+<details><summary>How should I record a roll-call vote?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>For a roll call, write each member&#x27;s name and vote.</p></details>
+<details><summary>What should I do with a gap in my notes?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Put [CHECK] or a highlight on anything you would not swear to, then clear each one against your notes, the recording or the chair before you send the draft out.</p></details></div>
+</section>
 
     <p class="checked">Checked 9 November 2026</p>
   </main>
@@ -125,6 +134,43 @@ Voice vote: passed.
     <p>Made by Kerr &amp; Company LLC, Grand Rapids, Michigan.</p>
     <nav aria-label="Footer"><a href="/privacy/">Privacy</a> <a href="/terms/">Terms</a></nav>
   </footer>
-
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What should I prepare before the meeting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Build the draft from the agenda. Each agenda item becomes a heading."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does each motion need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each motion needs five things: what was moved, who moved it, who seconded it, how the board voted and the result."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How should I record a roll-call vote?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a roll call, write each member's name and vote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I do with a gap in my notes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Put [CHECK] or a highlight on anything you would not swear to, then clear each one against your notes, the recording or the chair before you send the draft out."
+      }
+    }
+  ]
+}</script>
 </body>
 </html>

@@ -13,11 +13,14 @@
   <meta property="og:type" content="website">
 
   <meta name="theme-color" content="#174c93">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/dmsans-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/clashdisplay-600.woff2" crossorigin>
   <link rel="stylesheet" href="/style.css">
+  <script defer src="/site.js"></script>
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
-  <script defer data-domain="mindtheminutes.com" src="https://plausible.io/js/script.js"></script>
+  <script defer data-domain="mindtheminutes.com" src="https://plausible.io/js/script.tagged-events.js"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -40,9 +43,9 @@
       </nav>
     </div>
   </header>
-  <main id="main" tabindex="-1">
-    <h1>Michigan meeting-minutes deadline</h1>
-    <p>Enter the meeting date to find when proposed minutes are due.</p>
+  <main id="main" class="page-content" tabindex="-1">
+    <div class="page-hero"><h1>Michigan meeting-minutes deadline</h1>
+    <p class="lede">Enter the meeting date to find when proposed minutes are due.</p></div>
     <form id="calculator" aria-describedby="coverage">
       <noscript><p class="warning">Turn on JavaScript to use this calculator.</p></noscript>
       <div class="date-fields">
@@ -93,6 +96,11 @@
     </div>
 
     <p><a href="/michigan-minutes-template/">Get the free Michigan meeting minutes template in Word and PDF</a>.</p>
+<section class="faq-section"><div class="faq"><p class="kicker">Questions, answered</p><h2>Questions about this page</h2>
+<details><summary>How does the safe date count business days?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Counting starts the next day and counts every Monday to Friday. No holidays are skipped in the safe date.</p></details>
+<details><summary>Which years does the calculator cover?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>This tool covers 2026 and 2027 only. Each safe date must fit those years.</p></details>
+<details><summary>Which approval date should I enter?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Use the date of the meeting that approved the minutes. It must be on or after the meeting date.</p></details></div>
+</section>
 
 
 
@@ -103,6 +111,36 @@
     <p>Made by Kerr &amp; Company LLC, Grand Rapids, Michigan.</p>
     <nav aria-label="Footer"><a href="/privacy/">Privacy</a> <a href="/terms/">Terms</a></nav>
   </footer>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does the safe date count business days?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Counting starts the next day and counts every Monday to Friday. No holidays are skipped in the safe date."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which years does the calculator cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This tool covers 2026 and 2027 only. Each safe date must fit those years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which approval date should I enter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the date of the meeting that approved the minutes. It must be on or after the meeting date."
+      }
+    }
+  ]
+}</script>
 <script id="holiday-data" type="application/json">{
   "state": "MI",
   "years": [

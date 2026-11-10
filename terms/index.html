@@ -13,11 +13,14 @@
   <meta property="og:type" content="website">
 
   <meta name="theme-color" content="#174c93">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/dmsans-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/clashdisplay-600.woff2" crossorigin>
   <link rel="stylesheet" href="/style.css">
+  <script defer src="/site.js"></script>
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
-  <script defer data-domain="mindtheminutes.com" src="https://plausible.io/js/script.js"></script>
+  <script defer data-domain="mindtheminutes.com" src="https://plausible.io/js/script.tagged-events.js"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -40,9 +43,9 @@
       </nav>
     </div>
   </header>
-  <main id="main" tabindex="-1">
-    <h1>Terms</h1>
-    <p>Using Mind the Minutes means you agree to these terms.</p>
+  <main id="main" class="page-content" tabindex="-1">
+    <div class="page-hero"><h1>Terms</h1>
+    <p class="lede">Using Mind the Minutes means you agree to these terms.</p></div>
     <section>
       <h2>What it does</h2>
       <p>Give Mind the Minutes a meeting recording or transcript. It drafts minutes with the roll call, motions, who moved and seconded, votes and times. It marks items with [CHECK] where the clerk must look. You can download Word and PDF drafts.</p>

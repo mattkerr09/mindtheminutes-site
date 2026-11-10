@@ -13,11 +13,14 @@
   <meta property="og:type" content="website">
 
   <meta name="theme-color" content="#174c93">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/dmsans-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/clashdisplay-600.woff2" crossorigin>
   <link rel="stylesheet" href="/style.css">
+  <script defer src="/site.js"></script>
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
-  <script defer data-domain="mindtheminutes.com" src="https://plausible.io/js/script.js"></script>
+  <script defer data-domain="mindtheminutes.com" src="https://plausible.io/js/script.tagged-events.js"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -40,10 +43,15 @@
       </nav>
     </div>
   </header>
-  <main id="main" tabindex="-1">
-    <h1>Board minutes, drafted on your own computer</h1>
-    <p class="lede">Give Mind the Minutes your meeting's recording or transcript. It drafts the roll call, motions, votes and times, with [CHECK] marks where you need to look.</p>
-    <div class="download-step">
+  <main id="main" class="home-page" tabindex="-1">
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="kicker">Mind the Minutes · For the clerk's desk</p>
+      <h1>Board minutes, <span class="grad">drafted on your own computer</span></h1>
+      <p class="lede">Give Mind the Minutes your meeting's recording or transcript. It drafts the roll call, motions, votes and times, with [CHECK] marks where you need to look.</p>
+      <a class="sample-link" href="#hero-demo">Explore the sample <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+          <div class="download-step">
       <div class="download-row">
         <a class="button plausible-event-name=Download+free" href="/download/?src=home">Download free</a>
         <p class="price">Your first meeting is free. $79 once per computer after that.</p>
@@ -52,44 +60,644 @@
       <p class="mobile-link"><a href="mailto:?subject=Mind%20the%20Minutes%20download&amp;body=https%3A%2F%2Fmindtheminutes.com%2Fdownload%2F">Send the Mac link to yourself</a></p>
     </div>
 
-    <figure>
-      <picture>
-        <source media="(max-width: 599px)" srcset="/img/sample-draft.png" width="1528" height="1623">
-        <img src="/img/dashboard.png" alt="Mind the Minutes dashboard showing recent sample meetings and items for the clerk to review" width="1600" height="1164">
-      </picture>
+      <a class="button secondary" href="/michigan-minutes-deadline/">Try the free Michigan deadline calculator</a>
+      <div class="pills">
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="12" rx="3"/><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 5v3"/></svg>Nothing uploaded</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 8h10M7 12h10m-10 4h6"/></svg>Mac and Windows</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 10h18m-13 5h3m3 0h3"/></svg>Michigan deadline dates built in</span>
+      </div>
+    </div>
+    <figure class="hero-demo">
+      <div class="app-frame" id="hero-demo" aria-label="Sample transcript becoming draft minutes">
+        <div class="window-bar">
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+          <span>Mind the Minutes</span>
+          <span class="local-badge">On your computer</span>
+        </div>
+        <div class="demo-tools">
+          <p id="sample-help">Choose a line. See what it became.</p>
+          <button class="sample-replay" type="button" id="sample-replay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1 8M4 4v6h6"/></svg>Play the sample again</button>
+        </div>
+        <div class="demo-workspace" aria-describedby="sample-help">
+          <div class="recording-pane">
+            <p class="pane-label">Recording &amp; transcript</p>
+            <strong>Township sample</strong>
+            <div class="waveform">
+              <svg viewBox="0 0 244 70" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 30v10"/><path d="M9 23v24"/><path d="M14 27v16"/><path d="M19 13v44"/><path d="M24 20v30"/><path d="M29 7v56"/><path d="M34 25v20"/><path d="M39 16v38"/><path d="M44 28v14"/><path d="M49 11v48"/><path d="M54 4v62"/><path d="M59 23v24"/><path d="M64 17v36"/><path d="M69 9v52"/><path d="M74 27v16"/><path d="M79 30v10"/><path d="M84 23v24"/><path d="M89 27v16"/><path d="M94 13v44"/><path d="M99 20v30"/><path d="M104 7v56"/><path d="M109 25v20"/><path d="M114 16v38"/><path d="M119 28v14"/><path d="M124 11v48"/><path d="M129 4v62"/><path d="M134 23v24"/><path d="M139 17v36"/><path d="M144 9v52"/><path d="M149 27v16"/><path d="M154 30v10"/><path d="M159 23v24"/><path d="M164 27v16"/><path d="M169 13v44"/><path d="M174 20v30"/><path d="M179 7v56"/><path d="M184 25v20"/><path d="M189 16v38"/><path d="M194 28v14"/><path d="M199 11v48"/><path d="M204 4v62"/><path d="M209 23v24"/><path d="M214 17v36"/><path d="M219 9v52"/><path d="M224 27v16"/><path d="M229 30v10"/><path d="M234 23v24"/><path d="M239 27v16"/></svg>
+              <span class="playhead"></span>
+            </div>
+            <div class="transcript">
+              <div class="transcript-line demo-line" data-pair="order" role="button" tabindex="0" aria-pressed="false">
+                <time>00:00:00</time>
+                <p>Alex Green: I call this meeting to order at 7:00 p.m.</p>
+              </div>
+              <div class="transcript-line demo-line" data-pair="roll" role="button" tabindex="0" aria-pressed="false">
+                <time>00:00:20</time>
+                <p>Casey Brown: Roll call. Green, Brown, Lee and Smith are present. Davis is absent.</p>
+              </div>
+              <div class="transcript-line demo-line" data-pair="motion" role="button" tabindex="0" aria-pressed="false">
+                <time>00:05:30</time>
+                <p>Taylor Smith: I&#x27;ll make a motion to approve the road repair contract.</p>
+              </div>
+              <div class="transcript-line demo-line" data-pair="motion" role="button" tabindex="0" aria-pressed="false">
+                <time>00:05:40</time>
+                <p>Casey Brown: I'll second.</p>
+              </div>
+              <div class="transcript-line demo-line" data-pair="motion" role="button" tabindex="0" aria-pressed="false">
+                <time datetime="PT6M">00:06:00 to 00:06:40</time>
+                <p>Supervisor Green: Yes.</p>
+                <p>Clerk Brown: Yes.</p>
+                <p>Treasurer Lee: Abstain.</p>
+                <p>Trustee Smith: Yes.</p>
+                <p>Trustee Davis: No.</p>
+              </div>
+            </div>
+          </div>
+          <div class="draft-pane">
+            <p class="pane-label">The draft · Michigan township</p>
+            <h2>Board minutes</h2>
+            <p class="draft-note">Draft for the clerk to correct and the board to approve.</p>
+            <div class="draft-lines">
+              <p class="draft-line demo-line" data-pair="order" role="button" tabindex="0" aria-pressed="false">Meeting called to order. Time: 7:00 p.m.</p>
+              <h3 class="demo-line">Roll call</h3>
+              <p class="draft-line demo-line" data-pair="roll" role="button" tabindex="0" aria-pressed="false">Present at start: Green, Brown, Lee, Smith.</p>
+              <p class="draft-line demo-line" data-pair="roll" role="button" tabindex="0" aria-pressed="false">Absent at start: Davis.</p>
+              <p class="draft-line demo-line">Late arrival: Davis, 7:04 p.m.</p>
+              <h3 class="demo-line">Motion 2</h3>
+              <p class="draft-line demo-line" data-pair="motion" role="button" tabindex="0" aria-pressed="false">Motion to approve the road repair contract.</p>
+              <p class="draft-line demo-line" data-pair="motion" role="button" tabindex="0" aria-pressed="false">Moved by: Smith.</p>
+              <p class="draft-line demo-line" data-pair="motion" role="button" tabindex="0" aria-pressed="false">Seconded by: Brown.</p>
+              <p class="draft-line demo-line" data-pair="motion" role="button" tabindex="0" aria-pressed="false">Roll-call vote: passed. Green: yes; Brown: yes; Lee: abstain; Smith: yes; Davis: no.</p>
+              <h3 class="demo-line">Items to check</h3>
+              <p class="draft-line check-line demo-line">[CHECK] Add the board&#x27;s name.</p>
+              <p class="draft-line check-line demo-line">[CHECK] Add where the meeting was held.</p>
+              <p class="draft-line check-line demo-line">[CHECK] Members came from the roll call. Add full names and roles in Your board.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption>Interface illustration. The draft text is the app's real output for its built-in sample meeting, a made-up township board, drafted with no board details entered.</figcaption>
+    </figure>
+  </div>
+</section>
+<section class="home-section" id="the-clerks-work">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">After the meeting</p>
+      <h2>The meeting ends.<br><span class="ink-underline">The minutes still need you.<svg viewBox="0 0 420 18" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12Q160 0 414 9M25 15Q230 5 389 13"/></svg></span></h2>
+      <p>A recording helps you check what happened. You still have to turn it into the board's record.</p>
+    </div>
+    <div class="clerk-desk">
+      <svg class="desk-drawing" viewBox="0 0 600 350" role="img" aria-labelledby="desk-title">
+        <title id="desk-title">A clerk's desk with a recorder, meeting notes and an 8 business day clock for proposed minutes</title>
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path class="desk-wash" d="M36 91Q298 12 560 81L574 295Q301 333 25 297Z"/>
+          <path d="M27 299Q297 287 578 300M64 307l-8 20m478-20 8 20"/>
+          <g transform="rotate(-7 142 199)"><rect class="desk-paper" x="73" y="111" width="135" height="161" rx="15"/><rect x="88" y="128" width="105" height="45" rx="5"/><path d="M100 151h8l5-12 8 27 8-22 7 9h45"/><circle cx="141" cy="214" r="23"/><circle class="desk-brass" cx="141" cy="214" r="9"/><path d="M93 250h25m42 0h26"/></g>
+          <g transform="rotate(5 307 206)"><path class="desk-paper" d="M231 113h147v167H231Z"/><path class="desk-brass" d="M248 107v17m23-17v17m23-17v17m23-17v17m23-17v17m23-17v17"/><path d="M250 145h107m-107 27h86m-86 27h99m-99 27h63"/><path class="desk-brass" d="m252 250 7 7 13-15m17 8h56M396 175l-18 96 7 15 10-12 17-96Z"/></g>
+          <g transform="rotate(6 466 107)"><rect class="desk-paper" x="392" y="36" width="160" height="122" rx="7"/><path d="M393 65h158m-130-38v18m101-18v18"/><path class="desk-brass" d="M413 139h119"/></g>
+          <path class="desk-brass" d="M49 72q14-9 20 0m476 155q15-12 25 1M49 257l-8 7m497-63 9-6"/>
+        </g>
+        <g class="desk-label"><text x="416" y="91" transform="rotate(6 466 107)">Proposed minutes</text><text class="desk-eight" x="416" y="124" transform="rotate(6 466 107)">8 business days</text><text x="250" y="166" transform="rotate(5 307 206)">Roll call</text><text x="250" y="219" transform="rotate(5 307 206)">Motions &amp; votes</text></g>
+      </svg>
+      <div class="desk-notes">
+        <article class="desk-note">
+          <h3>Hours with a recording</h3>
+          <p>Back through the recording. Back through your notes. Find the call to order, the late arrival and the time the meeting ended.</p>
+          <div class="note-detail">
+            <span>00:04:10</span>
+            <p>Alex Green: Trustee Davis has arrived at 7:04 p.m.</p>
+          </div>
+        </article>
+        <article class="desk-note">
+          <h3>The motion has to be right</h3>
+          <p>What was moved? Who seconded? Was that a no or an abstention? The draft keeps the motion and each roll-call vote together for you to check.</p>
+          <div class="note-detail">
+            <span>Motion 2 · Roll-call vote</span>
+            <p>Lee: abstain; Davis: no.</p>
+          </div>
+        </article>
+        <article class="desk-note">
+          <h3>The clock keeps counting</h3>
+          <p>Michigan public bodies must make proposed minutes available within 8 business days after the meeting. The dates belong beside the draft.</p>
+          <div class="note-detail">
+            <span>Proposed minutes</span>
+            <p><strong>8</strong> business days after the meeting</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <figure class="meeting-comparison" aria-labelledby="same-meeting-title">
+      <h3 id="same-meeting-title">The same meeting: what was said, and the draft</h3>
+      <div class="comparison-control">
+        <label for="meeting-split">Drag the brass handle to compare. Or use the arrow keys.</label>
+        <span class="range-ends" aria-hidden="true"><span>More draft</span><span>More transcript</span></span>
+      </div>
+      <div class="meeting-sheets" id="meeting-sheets">
+        <article class="sample-sheet raw-sheet" aria-label="Raw sample transcript" tabindex="0">
+          <div class="sheet-label">What was said <span>Transcript</span></div>
+          <div class="sheet-body">
+            <p class="source-line">[00:00:00] Note: This is a made-up sample meeting.</p>
+            <p class="source-line">[00:00:00] Alex Green: I call this meeting to order at 7:00 p.m.</p>
+            <p class="source-line">[00:00:20] Casey Brown: Roll call. Green, Brown, Lee and Smith are present. Davis is absent.</p>
+            <p class="source-line">[00:01:00] Casey Brown: I move to approve the agenda.</p>
+            <p class="source-line">[00:01:10] Morgan Lee: Second.</p>
+            <p class="source-line">[00:01:20] Alex Green: All in favor say aye.</p>
+            <p class="source-line">[00:01:25] Board: Aye.</p>
+            <p class="source-line">[00:01:30] Alex Green: Opposed? Motion carries.</p>
+            <p class="source-line">[00:02:00] Alex Green: The prior minutes are approved by consent.</p>
+            <p class="source-line">[00:03:00] Alex Green: Public comment is now open.</p>
+            <p class="source-line">[00:03:10] Pat Resident: The potholes on our road need work. My exact words should not be copied.</p>
+            <p class="source-line">[00:03:20] Chris Guest: The park playground needs attention.</p>
+            <p class="source-line">[00:03:30] Pat Resident: The road still needs work.</p>
+            <p class="source-line">[00:04:00] Alex Green: Public comment is closed.</p>
+            <p class="source-line">[00:04:10] Alex Green: Trustee Davis has arrived at 7:04 p.m.</p>
+            <p class="source-line">[00:05:00] Morgan Lee: Treasurer report: the bills are ready for review.</p>
+            <p class="source-line">[00:05:30] Taylor Smith: I&#x27;ll make a motion to approve the road repair contract.</p>
+            <p class="source-line">[00:05:40] Casey Brown: I&#x27;ll second.</p>
+            <p class="source-line">[00:05:50] Alex Green: Roll-call vote.</p>
+            <p class="source-line">[00:06:00] Supervisor Green: Yes.</p>
+            <p class="source-line">[00:06:10] Clerk Brown: Yes.</p>
+            <p class="source-line">[00:06:20] Treasurer Lee: Abstain.</p>
+            <p class="source-line">[00:06:30] Trustee Smith: Yes.</p>
+            <p class="source-line">[00:06:40] Trustee Davis: No.</p>
+            <p class="source-line">[00:06:50] Alex Green: Motion carries.</p>
+            <p class="source-line">[00:07:00] Morgan Lee: Motion to buy a new mower.</p>
+            <p class="source-line">[00:07:10] Taylor Smith: I second the motion.</p>
+            <p class="source-line">[00:07:20] Alex Green: All in favor?</p>
+            <p class="source-line">[00:07:30] Board: Aye.</p>
+            <p class="source-line">[00:07:40] Alex Green: Opposed? The motion fails.</p>
+            <p class="source-line">[00:08:00] Alex Green: The meeting is adjourned at 7:08 p.m.</p>
+          </div>
+        </article>
+        <article class="sample-sheet minutes-sheet" aria-label="Drafted sample minutes" tabindex="0">
+          <div class="sheet-label">What you review <span>Draft minutes</span></div>
+          <div class="sheet-body">
+            <h3>Board minutes</h3>
+            <p>Draft for the clerk to correct and the board to approve.</p>
+            <h4>Meeting details</h4>
+            <p>Meeting type: regular</p>
+            <p>Date: Monday, November 9, 2026</p>
+            <p>Place: [CHECK] Not given.</p>
+            <p>Start time: 7:00 p.m. (as spoken at the call to order)</p>
+            <p>Template: Michigan township</p>
+            <h4>Roll call</h4>
+            <p>Present at start: Green, Brown, Lee, Smith.</p>
+            <p>Absent at start: Davis.</p>
+            <p>Late arrival: Davis, 7:04 p.m.</p>
+            <h4>Meeting business</h4>
+            <p>Meeting called to order. Time: 7:00 p.m.</p>
+            <p>The prior minutes are approved by consent.</p>
+            <p>Public comment: 2 speakers. Topics: parks, roads.</p>
+            <p>Treasurer report: the bills are ready for review.</p>
+            <p>Meeting adjourned. Time: 7:08 p.m.</p>
+            <h4>Motions and votes</h4>
+            <h4>Motion 1</h4>
+            <p>Motion to approve the agenda.</p>
+            <p>Moved by: Brown.</p>
+            <p>Seconded by: Lee.</p>
+            <p>Voice vote: passed.</p>
+            <h4>Motion 2</h4>
+            <p>Motion to approve the road repair contract.</p>
+            <p>Moved by: Smith.</p>
+            <p>Seconded by: Brown.</p>
+            <p>Roll-call vote: passed. Green: yes; Brown: yes; Lee: abstain; Smith: yes; Davis: no.</p>
+            <h4>Motion 3</h4>
+            <p>Motion to buy a new mower.</p>
+            <p>Moved by: Lee.</p>
+            <p>Seconded by: Smith.</p>
+            <p>Voice vote: failed.</p>
+            <h4>Items to check</h4>
+            <p class="check-line">[CHECK] Add the board&#x27;s name.</p>
+            <p class="check-line">[CHECK] Add where the meeting was held.</p>
+            <p class="check-line">[CHECK] Members came from the roll call. Add full names and roles in Your board.</p>
+            <p>Proposed minutes must be available within 8 business days after the meeting. Approved minutes must be available within 5 business days after the meeting at which they are approved. Checked against MCL 15.269(3) on legislature.mi.gov, 8 November 2026. https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-15-269</p>
+          </div>
+        </article>
+        <input id="meeting-split" type="range" min="0" max="100" value="50" aria-controls="meeting-sheets" aria-valuetext="Transcript 50 percent, draft 50 percent">
+        <div class="sheet-divider" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M12 3v18"/></svg></div>
+      </div>
+      <figcaption>The built-in made-up sample meeting, drafted with no board details entered. Both panes scroll so you can read the whole meeting. Check and correct the draft before the board approves it.</figcaption>
+    </figure>
+  </div>
+</section>
+<section class="home-section section-tint" id="how-it-works">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">From the file to the draft</p>
+      <h2>Three steps. Then your clerk's eye.</h2>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <p class="step-number">STEP 01</p>
+        <h3>Choose the recording or transcript</h3>
+        <p>Start with the recording you kept, or a transcript you already have.</p>
+        <svg class="step-visual" viewBox="0 0 260 120" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="20" y="15" width="100" height="90" rx="8"/><path d="M45 38v40m12-50v60m12-40v20m12-35v50m12-45v40M137 60h20m-8-8 8 8-8 8"/><rect x="175" y="15" width="65" height="90" rx="8"/><path d="M190 40h35m-35 15h35m-35 15h25m-25 15h30"/></svg>
+      </article>
+      <article class="card reveal">
+        <p class="step-number">STEP 02</p>
+        <h3>Check the meeting date</h3>
+        <p>The date fills in from the file. Check it before you make the draft.</p>
+        <svg class="step-visual" viewBox="0 0 260 120" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="45" y="20" width="170" height="85" rx="10"/><path d="M45 45h170M75 10v20m110-20v20M70 65h40m-40 20h40m25-10 12 12 25-30"/></svg>
+      </article>
+      <article class="card reveal">
+        <p class="step-number">STEP 03</p>
+        <h3>Press Make the draft</h3>
+        <p>The app builds the minutes on your computer, ready for your review.</p>
+        <svg class="step-visual" viewBox="0 0 260 120" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="30" y="15" width="200" height="90" rx="10"/><path d="M50 35h55m-55 15h80m-80 15h65m-65 15h90m35-40 25 20-25 20z"/></svg>
+      </article>
+    </div>
+    <p class="after-steps"><strong>Then check the [CHECK] items.</strong> Read and correct the whole draft, and download Word or PDF. It is always a draft. It is not legal advice.</p>
+  </div>
+</section>
+<section class="home-section" id="proof">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">From the actual app</p>
+      <h2>A draft you can open.<br><span class="ink-underline">Dates you can check.<svg viewBox="0 0 420 18" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12Q160 0 414 9M25 15Q230 5 389 13"/></svg></span></h2>
+      <p>These are real screens from Mind the Minutes. The meetings shown are made-up examples.</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat reveal">
+        <strong>1.3 s</strong>
+        <p>The built-in sample meeting drafted in 1.3 s.</p>
+      </div>
+      <div class="stat reveal">
+        <strong>9.6 s</strong>
+        <p>A 29-second recording drafted in 9.6 s on the signed Mac build.</p>
+      </div>
+    </div>
+    <p class="byline">Measured 9 November 2026.</p>
+    <figure class="dashboard-shot reveal">
+      <div class="screen-frame">
+        <div class="window-bar">
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+          <span>Meetings on your computer</span>
+        </div>
+        <img src="/img/dashboard.png" alt="Mind the Minutes dashboard showing recent sample meetings and items for the clerk to review" width="1600" height="1164" loading="lazy">
+      </div>
       <figcaption>Recent meetings, with the items that need a clerk's review. The meetings shown are made-up examples.</figcaption>
     </figure>
-    <section aria-labelledby="drafts-title">
-      <h2 id="drafts-title">What it drafts</h2>
-      <ul>
-        <li>The roll call and meeting times.</li>
-        <li>Motions, who moved and seconded, and the votes.</li>
-        <li>[CHECK] marks where you need to look.</li>
-      </ul>
-      <p>Download the draft in Word or PDF. Check and correct it before the board approves it. It is always a draft. It is not legal advice.</p>
-      <figure class="draft-shot">
-        <img src="/img/sample-draft.png" alt="A draft from the built-in sample meeting, with roll call, motions and votes for the clerk to check" width="1528" height="1623" loading="lazy">
-        <figcaption>A draft from the built-in sample meeting.</figcaption>
+    <div class="proof-grid">
+      <figure class="draft-shot reveal">
+        <div class="screen-frame">
+          <img src="/img/sample-draft.png" alt="A draft from the built-in sample meeting, with roll call, motions and votes for the clerk to check" width="1528" height="1623" loading="lazy">
+        </div>
+        <figcaption>A draft from the built-in sample meeting, a made-up township board. Check and correct it before the board approves it.</figcaption>
       </figure>
-    </section>
-    <section aria-labelledby="local-title">
-      <h2 id="local-title">Your recording stays on your computer</h2>
-      <p>Speech and speaker separation run on your computer, using whisper.cpp and sherpa-onnx. Meetings, recordings and drafts stay there. Nothing from the meeting is uploaded.</p>
-      <p>The app's one network call is a one-time license activation. It happens only when you press Activate. <a href="/privacy/">Read what activation sends</a>.</p>
-    </section>
-    <section aria-labelledby="times-title">
-      <h2 id="times-title">Measured on 9 November 2026</h2>
-      <p>The built-in sample meeting drafted in 1.3 s. A 29-second recording drafted in 9.6 s on the signed Mac build.</p>
-    </section>
-    <section aria-labelledby="dates-title">
-      <h2 id="dates-title">Michigan minutes dates</h2>
-      <figure>
-        <img src="/img/michigan-dates.png" alt="Michigan minutes dates in the app, showing safe dates and office closure details" width="1600" height="1164" loading="lazy">
-        <figcaption>Michigan dates in the app. You can also use the <a href="/michigan-minutes-deadline/">free deadline calculator</a> here.</figcaption>
+      <figure class="reveal">
+        <div class="screen-frame">
+          <img src="/img/michigan-dates.png" alt="Michigan minutes dates in the app, showing safe dates and office closure details" width="1600" height="1164" loading="lazy">
+        </div>
+        <figcaption>Michigan dates beside a made-up example meeting, with safe dates and office closure details.</figcaption>
       </figure>
-      <p>Writing minutes by hand? Start with the <a href="/michigan-minutes-template/">Word and PDF template</a>, the <a href="/how-to-write-meeting-minutes/">guide to writing minutes</a> or a <a href="/meeting-minutes-example/">full sample draft</a>.</p>
-    </section>
-    <p>I'm Matt Kerr in Grand Rapids, Michigan. I make Mind the Minutes.</p>
+    </div>
+  </div>
+</section>
+<section class="home-section section-tint" id="what-it-drafts">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">What it drafts</p>
+      <h2>The board's business,<br><span class="ink-underline">in a form you can review.<svg viewBox="0 0 420 18" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12Q160 0 414 9M25 15Q230 5 389 13"/></svg></span></h2>
+    </div>
+    <div class="bento-grid">
+      <article class="bento-card bento-attendance reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20v-3a6 6 0 0 1 12 0v3m1-16a3 3 0 0 1 0 6m2 3a5 5 0 0 1 3 4v3"/></svg>
+        </div>
+        <h3>Who was there, and when</h3>
+        <p>Roll call, meeting times and late arrivals. Keep attendance beside the decisions it helps explain.</p>
+        <div class="mini-paper attendance">
+          <span class="mini-label">Roll call</span>
+          <p>Present at start: Green, Brown, Lee, Smith.</p>
+          <p>Absent at start: Davis.</p>
+          <p class="arrival"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Late arrival: Davis, 7:04 p.m.</p>
+        </div>
+      </article>
+      <article class="bento-card bento-votes reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L20 5M4 5h8M4 20h16"/></svg>
+        </div>
+        <h3>Motions and votes</h3>
+        <p>The motion, who moved and seconded it, and the announced result. Voice votes and roll-call votes, with each vote by name.</p>
+        <div class="mini-paper vote-paper" data-sample-motion="2">
+          <span class="mini-label">Motion 2</span>
+          <p>Motion to approve the road repair contract.</p>
+          <div class="vote-tally">
+            <span data-voter="Green" data-vote="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>Green<strong>yes</strong></span>
+            <span data-voter="Brown" data-vote="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>Brown<strong>yes</strong></span>
+            <span data-voter="Lee" data-vote="abstain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/></svg>Lee<strong>abstain</strong></span>
+            <span data-voter="Smith" data-vote="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>Smith<strong>yes</strong></span>
+            <span data-voter="Davis" data-vote="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>Davis<strong>no</strong></span>
+          </div>
+          <p class="vote-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>Roll-call vote: passed.</p>
+        </div>
+      </article>
+      <article class="bento-card reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 22V3m0 0c4-4 10 4 15 0v11c-5 4-11-4-15 0"/></svg>
+        </div>
+        <h3>Gaps marked [CHECK]</h3>
+        <p>Public comment by topic. [CHECK] marks where the clerk needs to look. Read the full draft even when there are no marks.</p>
+        <div class="mini-paper check-paper">
+          <p class="check-line">[CHECK] Add the board&#x27;s name.</p>
+          <p class="check-line">[CHECK] Add where the meeting was held.</p>
+          <p class="check-line">[CHECK] Members came from the roll call. Add full names and roles in Your board.</p>
+        </div>
+      </article>
+      <article class="bento-card reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 8h10M7 12h10m-10 4h6"/></svg>
+        </div>
+        <h3>Four board templates</h3>
+        <p>Michigan township, HOA, church and nonprofit. Paste the agenda and the draft lists it, with each motion tied to its agenda item.</p>
+        <div class="template-mini">
+          <div class="template-tabs" aria-label="Board templates">
+            <span class="selected">Michigan township</span>
+            <span>HOA</span>
+            <span>Church</span>
+            <span>Nonprofit</span>
+          </div>
+          <div class="mini-paper">
+            <span class="mini-label">Template: Michigan township</span>
+            <p>Motion to approve the road repair contract.</p>
+            <p>Moved by: Smith.</p>
+            <p>Seconded by: Brown.</p>
+          </div>
+        </div>
+      </article>
+      <article class="bento-card bento-files reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg>
+        </div>
+        <h3>Files you can keep</h3>
+        <p>Download Word, PDF, Markdown and JSON. Check and correct the draft before the board approves it.</p>
+        <div class="file-chips" aria-label="Download file types">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5v5h5M8 12h7m-7 4h7"/></svg>Word</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5v5h5M8 12h7m-7 4h7"/></svg>PDF</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5v5h5M8 12h7m-7 4h7"/></svg>Markdown</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5v5h5M8 12h7m-7 4h7"/></svg>JSON</span>
+        </div>
+      </article>
+      <article class="bento-card bento-voices reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="13" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2m-7 9v3m-4 0h8"/></svg>
+        </div>
+        <h3>Voices for you to name</h3>
+        <p>Speaker separation labels voices for the clerk to name. Speech and speaker separation run on your computer.</p>
+        <div class="voice-names">
+          <div>
+            <span class="speaker-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6m4-9v12m4-14v16m4-12v8m4-7v6"/></svg>Speaker 1</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>
+            <input class="name-chip" type="text" aria-label="Name Speaker 1" placeholder="Add a name" autocomplete="off">
+          </div>
+          <div>
+            <span class="speaker-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6m4-9v12m4-14v16m4-12v8m4-7v6"/></svg>Speaker 2</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>
+            <input class="name-chip" type="text" aria-label="Name Speaker 2" placeholder="Add a name" autocomplete="off">
+          </div>
+        </div>
+      </article>
+      <article class="bento-card bento-closed reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6z"/><path d="m8 11 3 3 5-6"/></svg>
+        </div>
+        <h3>A guard for closed sessions</h3>
+        <p>The closed-session guard keeps only the purpose and the vote in the open minutes, under MCL 15.269(1).</p>
+        <div class="mini-paper closed-mini">
+          <div>
+            <span class="mini-label">Open minutes</span>
+            <p>Purpose</p>
+            <p>Vote</p>
+          </div>
+          <div class="redacted-lines" aria-label="Closed-session discussion kept out of open minutes">
+            <i></i>
+            <i></i>
+            <i></i>
+            <span>Closed-session discussion</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="home-section" id="on-your-computer">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="section-head">
+          <p class="kicker">A file on your desk</p>
+          <h2>Your recording stays<br>on your computer.</h2>
+        </div>
+        <p>Speech and speaker separation run on your computer, using whisper.cpp and sherpa-onnx. Meetings, recordings and drafts stay there. Nothing from the meeting is uploaded.</p>
+        <p>The app's one network call is a one-time license activation. It happens only when you press Activate.</p>
+        <p><a href="/privacy/">Read what activation sends</a></p>
+      </div>
+      <div class="reveal">
+        <svg class="local-diagram" viewBox="0 0 540 330" role="img" aria-labelledby="local-diagram-title"><title id="local-diagram-title">Recording, speech and draft stay inside your computer. A separate dotted line leaves for license activation only.</title><rect class="diagram-box" x="15" y="15" width="510" height="235" rx="20"/><text class="diagram-text" x="40" y="52">Your computer</text><g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="40" y="90" width="120" height="100" rx="12"/><rect x="210" y="90" width="120" height="100" rx="12"/><rect x="380" y="90" width="120" height="100" rx="12"/><path d="M165 140h35m-7-6 7 6-7 6m143 0h35m-7-6 7 6-7 6M85 110v25m10-30v35m10-25v15m10-20v25M255 110h30m-30 10h30m-30 10h20m130-20h30m-30 10h30m-30 10h20"/><path stroke-dasharray="4 6" d="M270 215v90h100"/></g><text class="diagram-text" x="64" y="169">Recording</text><text class="diagram-text" x="243" y="169">Speech</text><text class="diagram-text" x="420" y="169">Draft</text><text class="diagram-small" x="290" y="275">License activation only</text><text class="diagram-small" x="290" y="295">When you press Activate</text></svg>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="home-section section-tint" id="compare">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Choose what fits your board</p>
+      <h2 id="compare-title">At your desk, or on the web?</h2>
+      <p>Read on each company's own site, 9 November 2026</p>
+      <p>We make Mind the Minutes.</p>
+    </div>
+    <div class="table-scroll" role="region" aria-labelledby="compare-title" tabindex="0">
+      <table class="comparison">
+        <thead>
+          <tr>
+            <th scope="col">What to compare</th>
+            <th scope="col">Mind the Minutes<small>We make Mind the Minutes.</small></th>
+            <th scope="col">Minutes Mojo</th>
+            <th scope="col">GovClerk Minutes</th>
+            <th scope="col">ClerkMinutes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Price</th>
+            <td><span class="comparison-company">Mind the Minutes</span>$79 once per computer</td>
+            <td><span class="comparison-company">Minutes Mojo</span>From $499 a year for one board</td>
+            <td><span class="comparison-company">GovClerk Minutes</span>$59, $149 or $299 a month, or $10 once for 240 minutes</td>
+            <td><span class="comparison-company">ClerkMinutes</span>$129 or $299 a month ($99 or $249 billed yearly).</td>
+          </tr>
+          <tr>
+            <th scope="row">To start</th>
+            <td><span class="comparison-company">Mind the Minutes</span>First meeting free, no card</td>
+            <td><span class="comparison-company">Minutes Mojo</span>First meeting free, no card</td>
+            <td><span class="comparison-company">GovClerk Minutes</span>1 free meeting up to 240 minutes</td>
+            <td><span class="comparison-company">ClerkMinutes</span>A 14-day trial, no free meeting.</td>
+          </tr>
+          <tr>
+            <th scope="row">Where your recording goes</th>
+            <td><span class="comparison-company">Mind the Minutes</span>Stays on your computer</td>
+            <td><span class="comparison-company">Minutes Mojo</span>AWS, its FAQ says</td>
+            <td><span class="comparison-company">GovClerk Minutes</span>AWS</td>
+            <td><span class="comparison-company">ClerkMinutes</span>Google Cloud; Deepgram transcribes and OpenAI writes the minutes.</td>
+          </tr>
+          <tr>
+            <th scope="row">Runs as</th>
+            <td><span class="comparison-company">Mind the Minutes</span>Mac and Windows app</td>
+            <td><span class="comparison-company">Minutes Mojo</span>Web</td>
+            <td><span class="comparison-company">GovClerk Minutes</span>Web and mobile web</td>
+            <td><span class="comparison-company">ClerkMinutes</span>Web</td>
+          </tr>
+          <tr>
+            <th scope="row">Michigan minutes deadlines</th>
+            <td><span class="comparison-company">Mind the Minutes</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>Built in</td>
+            <td><span class="comparison-company">Minutes Mojo</span>Not stated</td>
+            <td><span class="comparison-company">GovClerk Minutes</span>Not stated</td>
+            <td><span class="comparison-company">ClerkMinutes</span>Not stated</td>
+          </tr>
+          <tr>
+            <th scope="row">Approvals and publishing to your town's site</th>
+            <td><span class="comparison-company">Mind the Minutes</span><svg class="cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>No</td>
+            <td><span class="comparison-company">Minutes Mojo</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>A review step</td>
+            <td><span class="comparison-company">GovClerk Minutes</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>Approvers, action items, audit trail</td>
+            <td><span class="comparison-company">ClerkMinutes</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>Approvals, publishing, archive</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<section class="home-section" id="michigan-dates">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="section-head">
+          <p class="kicker">Michigan minutes dates</p>
+          <h2>The dates belong<br>with the draft.</h2>
+        </div>
+        <div class="date-stats">
+          <div>
+            <strong>8</strong>
+            <span>business days<br>for proposed minutes</span>
+          </div>
+          <div>
+            <strong>5</strong>
+            <span>business days<br>for approved minutes</span>
+          </div>
+        </div>
+        <p>Proposed minutes must be available within 8 business days after the meeting. Approved minutes must be available within 5 business days after the meeting at which they are approved.</p>
+        <p><a href="https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-15-269">MCL 15.269(3)</a>. It is not legal advice.</p>
+        <p><a class="button" href="/michigan-minutes-deadline/">Use the free deadline calculator</a></p>
+        <div class="resource-links">
+          <a href="/michigan-minutes-template/">Word and PDF template</a>
+          <a href="/how-to-write-meeting-minutes/">Guide to writing minutes</a>
+          <a href="/meeting-minutes-example/">Full sample draft</a>
+        </div>
+      </div>
+      <figure class="reveal">
+        <div class="screen-frame">
+          <img src="/img/michigan-dates.png" alt="Michigan dates for a made-up example meeting, with safe dates and office closure details" width="1600" height="1164" loading="lazy">
+        </div>
+        <figcaption>Michigan dates in the app. The meeting shown is a made-up example.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+<section class="home-section section-tint" id="price">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Try your first meeting</p>
+      <h2>Start with a meeting you know.</h2>
+    </div>
+    <div class="price-layout">
+      <div class="price-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H5v20h14V7zM14 2v6h5M8 12h8m-8 4h6"/></svg>
+        <p class="price">Your first meeting is free. $79 once per computer after that.</p>
+        <p>No card for the free meeting.</p>
+        <a class="button plausible-event-name=Download+free" href="/download/">Download free</a>
+      </div>
+      <div>
+        <p class="refund">If it does not work for you, email us within 30 days of purchase and we will refund you.</p>
+        <p><a href="mailto:support@mindtheminutes.com">support@mindtheminutes.com</a></p>
+        <p class="byline">Mac with Apple silicon, macOS 12 or later.<br>Windows 10 or 11, 64-bit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="home-section" id="faq">
+  <div class="wrap">
+    <div class="faq">
+      <p class="kicker">Questions, answered</p>
+      <h2>Questions before your first draft</h2>
+      <details>
+        <summary>Is it free?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>Your first meeting is free. $79 once per computer after that. No card for the free meeting.</p>
+      </details>
+      <details>
+        <summary>Does my recording get uploaded?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>No. Meetings, recordings and drafts stay on your computer. Speech and speaker separation run there. License activation is the app&#x27;s one network call, only when you press Activate.</p>
+      </details>
+      <details>
+        <summary>Can I use a transcript instead of a recording?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>Yes. Choose a recording or a transcript, check the meeting date, then press Make the draft.</p>
+      </details>
+      <details>
+        <summary>What computer do I need?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>Mac with Apple silicon, macOS 12 or later. Windows 10 or 11, 64-bit.</p>
+      </details>
+      <details>
+        <summary>Is the draft ready to approve as it is?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>No. It is always a draft for the clerk to check and correct before the board approves it. It is not legal advice.</p>
+      </details>
+      <details>
+        <summary>Does it know Michigan&#x27;s minutes deadlines?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>Yes. Michigan minutes deadline dates are built in. Proposed minutes must be available within 8 business days after the meeting. Approved minutes must be available within 5 business days after the meeting at which they are approved.</p>
+      </details>
+      <details>
+        <summary>What about closed sessions?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>The closed-session guard keeps only the purpose and the vote in the open minutes, under MCL 15.269(1). The clerk keeps a separate set of closed-session minutes.</p>
+      </details>
+      <details>
+        <summary>Who makes Mind the Minutes?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>I&#x27;m Matt Kerr in Grand Rapids, Michigan. I make Mind the Minutes. Made by Kerr &amp; Company LLC.</p>
+      </details>
+    </div>
+
+  </div>
+</section>
+<section class="home-section section-tint" id="made-in-michigan">
+  <div class="wrap">
+    <div class="maker">
+      <div class="maker-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 8h10M7 12h10m-10 4h6"/></svg>
+      </div>
+      <div>
+        <p class="maker-line">I'm Matt Kerr in Grand Rapids, Michigan. I make Mind the Minutes.</p>
+        <p>Made by Kerr &amp; Company LLC.</p>
+        <p>Your meetings, recordings and drafts stay on your computer. <a href="/privacy/">Privacy</a> · <a href="mailto:support@mindtheminutes.com">support@mindtheminutes.com</a></p>
+      </div>
+    </div>
+    <div class="final-panel">
+      <p class="kicker">For your next meeting</p>
+      <h2>The recording is there.<br><span class="grad">Start the draft.</span></h2>
+      <p>Choose your file. Check the date. Make the draft.</p>
+      <a class="button plausible-event-name=Download+free" href="/download/">Download free</a>
+    </div>
+  </div>
+</section>
 
     <p class="checked">Checked 9 November 2026</p>
   </main>
@@ -97,6 +705,75 @@
     <p>Made by Kerr &amp; Company LLC, Grand Rapids, Michigan.</p>
     <nav aria-label="Footer"><a href="/privacy/">Privacy</a> <a href="/terms/">Terms</a></nav>
   </footer>
-
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is it free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your first meeting is free. $79 once per computer after that. No card for the free meeting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my recording get uploaded?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Meetings, recordings and drafts stay on your computer. Speech and speaker separation run there. License activation is the app's one network call, only when you press Activate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use a transcript instead of a recording?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Choose a recording or a transcript, check the meeting date, then press Make the draft."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What computer do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mac with Apple silicon, macOS 12 or later. Windows 10 or 11, 64-bit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the draft ready to approve as it is?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It is always a draft for the clerk to check and correct before the board approves it. It is not legal advice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it know Michigan's minutes deadlines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Michigan minutes deadline dates are built in. Proposed minutes must be available within 8 business days after the meeting. Approved minutes must be available within 5 business days after the meeting at which they are approved."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about closed sessions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The closed-session guard keeps only the purpose and the vote in the open minutes, under MCL 15.269(1). The clerk keeps a separate set of closed-session minutes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who makes Mind the Minutes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I'm Matt Kerr in Grand Rapids, Michigan. I make Mind the Minutes. Made by Kerr & Company LLC."
+      }
+    }
+  ]
+}</script>
 </body>
 </html>
